@@ -1,0 +1,61 @@
+.field {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  background-image: url("/assets/img/board.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-stack {
+  position: relative;
+  transition: filter 120ms ease-in-out, // transform 160ms ease-in-out
+;
+  img {
+    position: absolute;
+    width: 120px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    // filter: brightness(1);
+
+    // &:hover {
+    //   transform: translateX(1px) rotate(0.4deg);
+    // }
+  }
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.05);
+    // transform: translateX(2px) rotate(1deg);
+  }
+}
+
+.top-card {
+  cursor: pointer;
+  transition: transform 120ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.01) translateX(-1px) rotate(-0.9deg);
+  }
+}
+
+.pick-card {
+  transition: transform 120ms ease-in-out;
+  // transform: scale(1.5) rotate(0deg) !important;
+  animation: pick-card-animation 1.75s ease-in-out;
+  transform: scale(1.3) translateX(140px) translateY(-180px) rotate(10deg);
+}
+
+@keyframes pick-card-animation {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.7);
+  }
+  50% {
+    transform: scale(1.7);
+  }
+  100% {
+    transform: scale(1.3) translateX(140px) translateY(-180px) rotate(10deg);
+  }
+}
